@@ -1,0 +1,11 @@
+- [x] Update global CSS variables to dark theme
+- [x] Adjust text colors for dark background
+- [x] Update component styles for dark theme
+- [x] Verify contrast and visual hierarchy
+- [x] Create bookings table in drizzle schema
+- [x] Add booking query helpers in server/db.ts
+- [x] Create booking tRPC procedures in server/routers.ts
+- [x] Rebuild Book page with functional form that saves to database
+- [x] Restore Home page with original design
+- [x] Restore NotFound page with original design
+- [x] Test booking form submission and database storage

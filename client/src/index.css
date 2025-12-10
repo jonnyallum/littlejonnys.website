@@ -1,0 +1,263 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-charcoal: var(--background);
+  --color-cream: var(--foreground);
+}
+
+:root {
+  /* Little Jonnys Rustic Carnival Energy Palette - Dark Theme */
+  --primary: #fdb913; /* Golden Yellow - Vibrant, energetic, celebratory */
+  --primary-foreground: #1a1a1a; /* Dark Charcoal - Bold contrast */
+  --sidebar-primary: #fdb913;
+  --sidebar-primary-foreground: #1a1a1a;
+  --chart-1: #fdb913;
+  --chart-2: #c85a17; /* Burnt Orange */
+  --chart-3: #1a3a2a; /* Forest Green */
+  --chart-4: #f5f1e8; /* Warm Cream */
+  --chart-5: #2c2a2a; /* Charcoal */
+  --radius: 0.65rem;
+  
+  /* Dark Theme Base */
+  --background: #1a1a1a; /* Deep Black/Charcoal */
+  --foreground: #f5f1e8; /* Warm Cream text */
+  --card: #2c2a2a; /* Lighter Charcoal for cards */
+  --card-foreground: #f5f1e8;
+  --popover: #2c2a2a;
+  --popover-foreground: #f5f1e8;
+  --secondary: #c85a17; /* Burnt Orange */
+  --secondary-foreground: #ffffff;
+  --muted: #3d3b39;
+  --muted-foreground: #a8a49d;
+  --accent: #fdb913; /* Golden Yellow */
+  --accent-foreground: #1a1a1a;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #3d3b39;
+  --input: #2c2a2a;
+  --ring: #fdb913;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #f5f1e8;
+  --sidebar-accent: #fdb913;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #3d3b39;
+  --sidebar-ring: #fdb913;
+}
+
+.dark {
+  --primary: #fdb913;
+  --primary-foreground: #1a1a1a;
+  --sidebar-primary: #fdb913;
+  --sidebar-primary-foreground: #1a1a1a;
+  --background: #1a1a1a;
+  --foreground: #f5f1e8;
+  --card: #2c2a2a;
+  --card-foreground: #f5f1e8;
+  --popover: #2c2a2a;
+  --popover-foreground: #f5f1e8;
+  --secondary: #c85a17;
+  --secondary-foreground: #ffffff;
+  --muted: #3d3b39;
+  --muted-foreground: #a8a49d;
+  --accent: #fdb913;
+  --accent-foreground: #1a1a1a;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #3d3b39;
+  --input: #2c2a2a;
+  --ring: #fdb913;
+  --chart-1: #fdb913;
+  --chart-2: #c85a17;
+  --chart-3: #1a3a2a;
+  --chart-4: #f5f1e8;
+  --chart-5: #ffffff;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #f5f1e8;
+  --sidebar-accent: #fdb913;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #3d3b39;
+  --sidebar-ring: #fdb913;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lato', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  
+  /* Typography System - Rustic Carnival Energy */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    @apply text-accent; /* Default headings to accent color in dark mode */
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold leading-snug;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-bold leading-snug;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-bold;
+  }
+  
+  p {
+    @apply text-base md:text-lg leading-relaxed text-muted-foreground;
+  }
+  
+  /* Accent text with handwritten style */
+  .accent-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+  
+  /* Rustic Carnival Energy Components */
+  .scalloped-divider {
+    position: relative;
+    height: 60px;
+    background: linear-gradient(135deg, transparent 10px, var(--accent) 10px, var(--accent) 20px, transparent 20px);
+    background-size: 40px 100%;
+    background-position: 0 0;
+  }
+  
+  .wavy-divider {
+    position: relative;
+    height: 80px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="%23fdb913" opacity="0.1"/></svg>');
+    background-size: cover;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+    &:hover {
+      @apply shadow-lg transform scale-105;
+    }
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-primary-foreground px-6 py-3 rounded-lg font-bold transition-all duration-300 ease-out;
+    &:hover {
+      @apply shadow-lg transform scale-105 bg-yellow-500;
+    }
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 ease-out;
+    &:hover {
+      @apply shadow-lg transform scale-105;
+    }
+  }
+  
+  .section-title {
+    @apply text-center mb-12;
+    h2 {
+      @apply text-accent mb-4;
+    }
+  }
+}
