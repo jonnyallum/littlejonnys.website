@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch, Router as WouterRouter } from "wouter";
+import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Navigation from "./components/Navigation";
@@ -18,6 +19,7 @@ import Book from "./pages/Book";
 const routerBase = (import.meta.env.BASE_URL ?? "/").replace(/\/$/, "") || "/";
 
 function AppRouter() {
+function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
@@ -54,6 +56,7 @@ function App() {
           <WouterRouter base={routerBase}>
             <AppRouter />
           </WouterRouter>
+          <Router />
           <Footer />
         </TooltipProvider>
       </ThemeProvider>

@@ -16,6 +16,8 @@ const base =
 export default defineConfig({
   plugins,
   base,
+export default defineConfig({
+  plugins,
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
